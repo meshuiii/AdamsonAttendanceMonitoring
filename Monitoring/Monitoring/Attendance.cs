@@ -131,14 +131,8 @@ namespace Monitoring
                     radioButton.BackColor = Color.Transparent;
                     //radioButton.Location = new System.Drawing.Point(285 + (-(j * 65)), 0); 
                     radioButton.Location = new System.Drawing.Point(475 + (-(j * 65)), -1);
-
-                    // Adjust the horizontal position
-                    // Add radio button to group box
                     groupBox.Controls.Add(radioButton);
                 }
-
-
-                // Add group box to flow layout panel
                 flowLayoutPanel1.Controls.Add(groupBox);
             }
         }
