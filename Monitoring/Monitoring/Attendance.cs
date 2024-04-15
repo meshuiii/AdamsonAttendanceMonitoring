@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Monitoring
 {
     public partial class Attendance : Form
     {
-        public string[] students = {
+
+
+public string[] students = {
     "AGAN, Michael Christian",
     "ALANGSAB, Riqueta",
     "AÑASCO, Althea Zoe",
@@ -57,8 +60,10 @@ namespace Monitoring
     "YABUT, Aleerah Marishka",
     "ZAPATA, Kurt Anthony"
         };
+        
 
-        public string[] studentID = {"202320107",
+        
+         public string[] studentID = {"202320107",
     "202312640",
     "202311220",
     "202313737",
@@ -101,11 +106,18 @@ namespace Monitoring
     "202310728",
     "202312834",
     "202312647" };
+        
+
+      //  public string[] students = { "Student1", "Student2", "Student3", "Student4", "Student5" };
+      //  public string[] studentID = { "ID1", "ID2", "ID3", "ID4", "ID5" };
+        private int[] selectedIndexes; 
 
         public Attendance()
         {
             InitializeComponent();
             CreateGroupBoxes();
+            selectedIndexes = new int[students.Length];
+
         }
         private void CreateGroupBoxes()
         {
@@ -120,22 +132,73 @@ namespace Monitoring
                 label.Text = studentID[i];
                 label.Location = new System.Drawing.Point(150, -1);
 
-               
                 groupBox.Controls.Add(label);
                 groupBox.Size = new System.Drawing.Size(500, 25); // Width = 500, Height = 25
-                                                                  
+
                 for (int j = 0; j < 4; j++)
                 {
                     RadioButton radioButton = new RadioButton();
                     radioButton.Text = "";
                     radioButton.BackColor = Color.Transparent;
-                    //radioButton.Location = new System.Drawing.Point(285 + (-(j * 65)), 0); 
                     radioButton.Location = new System.Drawing.Point(475 + (-(j * 65)), -1);
+                    radioButton.CheckedChanged += (sender, e) =>
+                    {
+                        // Store the selected index when a radio button changes
+                        RadioButton btn = (RadioButton)sender;
+                        if (btn.Checked)
+                        {
+                            int index = (btn.Parent as GroupBox).TabIndex; // Get the index of the group box
+                            selectedIndexes[index] = Array.IndexOf(btn.Parent.Controls.OfType<RadioButton>().ToArray(), btn) + 1; // Store the selected index
+                        }
+                    };
+          
                     groupBox.Controls.Add(radioButton);
                 }
                 flowLayoutPanel1.Controls.Add(groupBox);
+                groupBox.TabIndex = i;
             }
         }
+        List<int> selectedIndexList = new List<int>();
+
+     
+
+
+
+
+
+        private void submitAttendance_Click(object sender, EventArgs e)
+        {
+
+            //FOR CHECKING
+            AllocConsole();
+            foreach (int selectedIndex in selectedIndexes)
+            {
+                Console.WriteLine(selectedIndex);
+            }
+        }
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool AllocConsole();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -207,5 +270,7 @@ namespace Monitoring
         {
 
         }
+
+
     }
 }

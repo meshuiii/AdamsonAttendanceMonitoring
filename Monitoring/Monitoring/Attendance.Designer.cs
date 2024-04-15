@@ -70,6 +70,7 @@
             label13 = new Label();
             label24 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            submitAttendance = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -524,15 +525,26 @@
             flowLayoutPanel1.Location = new Point(182, 127);
             flowLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(553, 283);
+            flowLayoutPanel1.Size = new Size(553, 272);
             flowLayoutPanel1.TabIndex = 58;
+            // 
+            // submitAttendance
+            // 
+            submitAttendance.Location = new Point(403, 392);
+            submitAttendance.Name = "submitAttendance";
+            submitAttendance.Size = new Size(101, 22);
+            submitAttendance.TabIndex = 59;
+            submitAttendance.Text = "Submit";
+            submitAttendance.UseVisualStyleBackColor = true;
+            submitAttendance.Click += submitAttendance_Click;
             // 
             // Attendance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
-            ClientSize = new Size(734, 410);
+            ClientSize = new Size(734, 418);
+            Controls.Add(submitAttendance);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(label12);
             Controls.Add(label11);
@@ -643,5 +655,6 @@
         private Label label13;
         private Label label24;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Button submitAttendance;
     }
 }
