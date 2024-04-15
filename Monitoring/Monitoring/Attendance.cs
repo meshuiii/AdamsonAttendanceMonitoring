@@ -14,7 +14,7 @@ namespace Monitoring
     public partial class Attendance : Form
     {
 
-
+/*
 public string[] students = {
     "AGAN, Michael Christian",
     "ALANGSAB, Riqueta",
@@ -106,10 +106,10 @@ public string[] students = {
     "202310728",
     "202312834",
     "202312647" };
-        
-
-      //  public string[] students = { "Student1", "Student2", "Student3", "Student4", "Student5" };
-      //  public string[] studentID = { "ID1", "ID2", "ID3", "ID4", "ID5" };
+        */
+        //FOR TEST CASE
+      public string[] students = { "Student1", "Student2", "Student3", "Student4", "Student5" };
+      public string[] studentID = { "ID1", "ID2", "ID3", "ID4", "ID5" };
         private int[] selectedIndexes; 
 
         public Attendance()
