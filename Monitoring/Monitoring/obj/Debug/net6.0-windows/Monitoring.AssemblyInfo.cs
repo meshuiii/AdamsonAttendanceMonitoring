@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Monitoring")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+255635ff32d0eef9d631626c9060d6fdf5a5962a")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a2405cfc653bc5befacd1b2a2482d98b2072a0c4")]
+>>>>>>> parent of 255635f (Minimal changes to Log In)
 [assembly: System.Reflection.AssemblyProductAttribute("Monitoring")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Monitoring")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
