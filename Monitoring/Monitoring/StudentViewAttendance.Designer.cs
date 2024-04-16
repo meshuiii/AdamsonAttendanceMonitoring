@@ -216,6 +216,7 @@
             label3.Size = new Size(61, 20);
             label3.TabIndex = 17;
             label3.Text = "Mission";
+            label3.Click += label3_Click;
             // 
             // pictureBox5
             // 
@@ -228,6 +229,7 @@
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 25;
             pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
             // 
             // panel4
             // 
@@ -250,6 +252,7 @@
             label4.Size = new Size(51, 20);
             label4.TabIndex = 17;
             label4.Text = "Vision";
+            label4.Click += label4_Click;
             // 
             // pictureBox7
             // 
@@ -262,6 +265,7 @@
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox7.TabIndex = 25;
             pictureBox7.TabStop = false;
+            pictureBox7.Click += pictureBox7_Click;
             // 
             // panel5
             // 
