@@ -2,10 +2,14 @@ namespace Monitoring
 {
     public partial class Form1 : Form
     {
-        private Dictionary<string, string> users = new Dictionary<string, string>
+        private Dictionary<string, string> adminUsers = new Dictionary<string, string>
         {
-            {"admin1", "password1"},
-            {"admin2", "password2"},
+            {"admin1", "password1"}
+        };
+
+        private Dictionary<string, string> studentUsers = new Dictionary<string, string>
+        {
+
             {"student1", "student1"},
             {"student2", "student2"},
             {"student3", "student3"}
@@ -20,24 +24,20 @@ namespace Monitoring
             string inputUsername = usernameTextBox.Text;
             string inputPassword = passwordTextBox.Text;
 
-            if (users.ContainsKey(inputUsername) && users[inputUsername] == inputPassword)
+            if (adminUsers.ContainsKey(inputUsername) && adminUsers[inputUsername] == inputPassword)
             {
-                
-                MessageBox.Show("Login successful!");
+                MessageBox.Show("Login successful as Admin!");
+                Courses courseForm = new Courses();
+                courseForm.Show();
+                this.Hide();
+            }
+            else if (studentUsers.ContainsKey(inputUsername) && studentUsers[inputUsername] == inputPassword)
+            {
+                MessageBox.Show("Login successful as Student!");
+                Courses studentForm = new Courses();
+                studentForm.Show();
 
-                if (inputUsername.StartsWith("admin"))
-                {
-                    Courses courseForm = new Courses();
-                    courseForm.Show();
-                }
-
-
-                else if (inputUsername.StartsWith("student"))
-                {
-                    Courses studentForm = new Courses();
-                    studentForm.Show();
-                }
-                this.Hide(); 
+                this.Hide();
             }
             else
             {
