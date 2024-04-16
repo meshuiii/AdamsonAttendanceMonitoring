@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using GroupBox = System.Windows.Forms.GroupBox;
 using RadioButton = System.Windows.Forms.RadioButton;
+using static Monitoring.Form1;
 
 namespace Monitoring
 {
@@ -117,6 +118,7 @@ namespace Monitoring
         public DateTime date = new DateTime();
         public int subject;
         public Status attendance;
+        private UserData loggedInUser;
 
         public class Status
         {
@@ -133,10 +135,11 @@ namespace Monitoring
 
         }
 
-        public Attendance()
+        public Attendance(UserData userData)
         {
             InitializeComponent();
             CreateGroupBoxes();
+            this.loggedInUser = userData;
             attendanceStatus = new int[students.Length];
             comboBox1.SelectedIndex = 0;
 
@@ -209,11 +212,6 @@ namespace Monitoring
 
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Attendance_Load(object sender, EventArgs e)
         {
 
@@ -225,41 +223,6 @@ namespace Monitoring
         }
 
         private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label21_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label474_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label570_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label948_Click(object sender, EventArgs e)
         {
 
         }
@@ -301,5 +264,28 @@ namespace Monitoring
             classReport.GetData(students, studentID, attendance);
             classReport.Show();
         }
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            ClassReport classReport = new ClassReport();
+            classReport.GetData(students, studentID, attendance);
+            classReport.Show();
+        }
+
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            Form1 Form = new Form1();
+            Form.Show();
+            this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Form1 Form = new Form1();
+            Form.Show();
+            this.Close();
+        }
+
+
     }
 }

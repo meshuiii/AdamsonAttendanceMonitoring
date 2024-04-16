@@ -35,27 +35,27 @@ namespace Monitoring
         {
             //if (Status.DateTimeStamp.Date == SelectedDate.Date)
             //{
-                for (int i = 0; i < studentName.Length; i++)
-                {
-                    GroupBox groupBox = new GroupBox();
-                    groupBox.Text = studentName[i];
+            for (int i = 0; i < studentName.Length; i++)
+            {
+                GroupBox groupBox = new GroupBox();
+                groupBox.Text = studentName[i];
 
-                    Label id = new Label();
-                    id.Text = studentNo[i];
-                    id.Location = new System.Drawing.Point(150, 0);
+                Label id = new Label();
+                id.Text = studentNo[i];
+                id.Location = new System.Drawing.Point(150, 0);
 
-                    Label present = new Label();
-                    present.Text = status.AttendanceStatus[i].ToString();
-                    //present.Text = "Test";
-                    present.Location = new System.Drawing.Point(345, 0);
+                Label present = new Label();
+                present.Text = status.AttendanceStatus[i].ToString();
+                //present.Text = "Test";
+                present.Location = new System.Drawing.Point(345, 0);
 
-                    groupBox.Controls.Add(id);
-                    groupBox.Controls.Add(present);
-                    groupBox.Size = new System.Drawing.Size(500, 40); // Width = 200, Height = 150
+                groupBox.Controls.Add(id);
+                groupBox.Controls.Add(present);
+                groupBox.Size = new System.Drawing.Size(500, 40); // Width = 200, Height = 150
 
-                    flowLayoutPanel1.Controls.Add(groupBox);
-                    groupBox.TabIndex = i;
-                }
+                flowLayoutPanel1.Controls.Add(groupBox);
+                groupBox.TabIndex = i;
+            }
             //}
             //else
             //{
@@ -112,6 +112,16 @@ namespace Monitoring
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             DisplayAttendance(StudentName, StudentNo, Status);
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

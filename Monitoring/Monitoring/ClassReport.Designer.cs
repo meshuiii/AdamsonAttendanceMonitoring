@@ -131,6 +131,7 @@ namespace Monitoring
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox6.TabIndex = 3;
             pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
             // 
             // label1
             // 
@@ -142,6 +143,7 @@ namespace Monitoring
             label1.Size = new Size(62, 20);
             label1.TabIndex = 8;
             label1.Text = "Courses";
+            label1.Click += label1_Click;
             // 
             // panel2
             // 

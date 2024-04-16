@@ -165,6 +165,7 @@ namespace Monitoring
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 5;
             pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
             // 
             // pictureBox7
             // 
@@ -189,6 +190,7 @@ namespace Monitoring
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 7;
             pictureBox8.TabStop = false;
+            pictureBox8.Click += pictureBox8_Click;
             // 
             // label1
             // 
@@ -245,6 +247,7 @@ namespace Monitoring
             label5.Size = new Size(68, 20);
             label5.TabIndex = 12;
             label5.Text = "Sign Out";
+            label5.Click += label5_Click;
             // 
             // panel1
             // 
