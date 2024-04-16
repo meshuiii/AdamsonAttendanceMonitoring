@@ -1,8 +1,4 @@
-﻿using System.Windows.Forms;
-using static System.Windows.Forms.AxHost;
-using static Monitoring.Attendance;
-
-namespace Monitoring
+﻿namespace Monitoring
 {
     partial class ClassReport
     {
@@ -59,14 +55,18 @@ namespace Monitoring
             label8 = new Label();
             comboBox1 = new ComboBox();
             label9 = new Label();
+            label12 = new Label();
+            label11 = new Label();
             label10 = new Label();
             pictureBox16 = new PictureBox();
+            pictureBox12 = new PictureBox();
+            label13 = new Label();
             label24 = new Label();
+            pictureBox11 = new PictureBox();
             label14 = new Label();
             pictureBox10 = new PictureBox();
+            pictureBox13 = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            label11 = new Label();
-            pictureBox14 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
@@ -82,8 +82,10 @@ namespace Monitoring
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -330,7 +332,6 @@ namespace Monitoring
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(107, 23);
             dateTimePicker1.TabIndex = 25;
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // pictureBox9
             // 
@@ -356,13 +357,11 @@ namespace Monitoring
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "APPLICATIONS DEVT LAB", "APPLICATIONS DEVT LEC", "COMPUTER PROG LAB", "COMPUTER PROG LEC", "OBJECT ORIENTED PROG LAB", "OBJECT ORIENTED PROG LEC" });
             comboBox1.Location = new Point(545, 68);
             comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(119, 23);
             comboBox1.TabIndex = 27;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label9
             // 
@@ -373,12 +372,37 @@ namespace Monitoring
             label9.TabIndex = 26;
             label9.Text = "Class:";
             // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.MintCream;
+            label12.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Location = new Point(554, 112);
+            label12.Name = "label12";
+            label12.Size = new Size(31, 13);
+            label12.TabIndex = 58;
+            label12.Text = "Date";
+            label12.Click += label12_Click;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.MintCream;
+            label11.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.Location = new Point(477, 112);
+            label11.Name = "label11";
+            label11.Size = new Size(33, 13);
+            label11.TabIndex = 57;
+            label11.Text = "Class";
+            label11.TextAlign = ContentAlignment.TopCenter;
+            label11.Click += label11_Click;
+            // 
             // label10
             // 
             label10.AutoSize = true;
             label10.BackColor = Color.MintCream;
             label10.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(347, 111);
+            label10.Location = new Point(349, 112);
             label10.Name = "label10";
             label10.Size = new Size(62, 13);
             label10.TabIndex = 56;
@@ -394,6 +418,28 @@ namespace Monitoring
             pictureBox16.TabIndex = 55;
             pictureBox16.TabStop = false;
             // 
+            // pictureBox12
+            // 
+            pictureBox12.BackColor = Color.MintCream;
+            pictureBox12.Location = new Point(613, 110);
+            pictureBox12.Margin = new Padding(3, 2, 3, 2);
+            pictureBox12.Name = "pictureBox12";
+            pictureBox12.Size = new Size(76, 15);
+            pictureBox12.TabIndex = 52;
+            pictureBox12.TabStop = false;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.BackColor = Color.MintCream;
+            label13.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Location = new Point(626, 112);
+            label13.Name = "label13";
+            label13.Size = new Size(39, 13);
+            label13.TabIndex = 59;
+            label13.Text = "Status";
+            label13.Click += label13_Click;
+            // 
             // label24
             // 
             label24.AutoSize = true;
@@ -404,12 +450,22 @@ namespace Monitoring
             label24.Size = new Size(0, 13);
             label24.TabIndex = 60;
             // 
+            // pictureBox11
+            // 
+            pictureBox11.BackColor = Color.MintCream;
+            pictureBox11.Location = new Point(454, 110);
+            pictureBox11.Margin = new Padding(3, 2, 3, 2);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(74, 15);
+            pictureBox11.TabIndex = 51;
+            pictureBox11.TabStop = false;
+            // 
             // label14
             // 
             label14.AutoSize = true;
             label14.BackColor = Color.MintCream;
             label14.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(205, 111);
+            label14.Location = new Point(205, 112);
             label14.Name = "label14";
             label14.Size = new Size(80, 13);
             label14.TabIndex = 50;
@@ -425,6 +481,16 @@ namespace Monitoring
             pictureBox10.TabIndex = 49;
             pictureBox10.TabStop = false;
             // 
+            // pictureBox13
+            // 
+            pictureBox13.BackColor = Color.MintCream;
+            pictureBox13.Location = new Point(533, 110);
+            pictureBox13.Margin = new Padding(3, 2, 3, 2);
+            pictureBox13.Name = "pictureBox13";
+            pictureBox13.Size = new Size(72, 15);
+            pictureBox13.TabIndex = 53;
+            pictureBox13.TabStop = false;
+            // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Location = new Point(181, 130);
@@ -432,29 +498,6 @@ namespace Monitoring
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(513, 225);
             flowLayoutPanel1.TabIndex = 61;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.BackColor = Color.MintCream;
-            label11.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(545, 110);
-            label11.Name = "label11";
-            label11.Size = new Size(39, 13);
-            label11.TabIndex = 66;
-            label11.Text = "Status";
-            label11.Click += label11_Click_1;
-            // 
-            // pictureBox14
-            // 
-            pictureBox14.BackColor = Color.MintCream;
-            pictureBox14.Location = new Point(446, 110);
-            pictureBox14.Margin = new Padding(3, 2, 3, 2);
-            pictureBox14.Name = "pictureBox14";
-            pictureBox14.Size = new Size(249, 15);
-            pictureBox14.TabIndex = 65;
-            pictureBox14.TabStop = false;
             // 
             // ClassReport
             // 
@@ -462,14 +505,17 @@ namespace Monitoring
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(700, 364);
-            Controls.Add(label11);
-            Controls.Add(pictureBox14);
             Controls.Add(flowLayoutPanel1);
+            Controls.Add(label12);
+            Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(pictureBox16);
+            Controls.Add(label13);
             Controls.Add(label24);
+            Controls.Add(pictureBox11);
             Controls.Add(label14);
             Controls.Add(pictureBox10);
+            Controls.Add(pictureBox13);
             Controls.Add(comboBox1);
             Controls.Add(label9);
             Controls.Add(dateTimePicker1);
@@ -484,6 +530,7 @@ namespace Monitoring
             Controls.Add(panel1);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
+            Controls.Add(pictureBox12);
             Margin = new Padding(3, 2, 3, 2);
             Name = "ClassReport";
             Text = "ClassReport";
@@ -507,8 +554,10 @@ namespace Monitoring
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -541,19 +590,17 @@ namespace Monitoring
         private Label label8;
         private ComboBox comboBox1;
         private Label label9;
+        private Label label12;
+        private Label label11;
         private Label label10;
         private PictureBox pictureBox16;
+        private PictureBox pictureBox12;
+        private Label label13;
         private Label label24;
+        private PictureBox pictureBox11;
         private Label label14;
         private PictureBox pictureBox10;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private PictureBox pictureBox11;
-        private PictureBox pictureBox12;
         private PictureBox pictureBox13;
-        private PictureBox pictureBox14;
-        private Label label11;
-        private Label label12;
-        private Label label13;
-        private Label label15;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

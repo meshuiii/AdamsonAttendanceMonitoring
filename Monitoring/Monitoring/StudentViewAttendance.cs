@@ -7,24 +7,62 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Monitoring.Form1;
 
 namespace Monitoring
 {
     public partial class StudentViewAttendance : Form
     {
-        public StudentViewAttendance()
+        private UserData loggedInUser;
+
+        public StudentViewAttendance(UserData userData)
         {
             InitializeComponent();
+            this.loggedInUser = userData;
+            label7.Text = loggedInUser.FullName;
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-
+            StudentViewAttendance AttendanceStudent = new StudentViewAttendance(loggedInUser);
+            AttendanceStudent.Show();
+            this.Hide();
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void StudentViewAttendance_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Courses courseForm = new Courses(loggedInUser);
+            courseForm.Show();
+            this.Hide();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Courses courseForm = new Courses(loggedInUser);
+            courseForm.Show();
+            this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Courses courseForm = new Courses(loggedInUser);
+            courseForm.Show();
+            this.Hide();
         }
     }
 }
