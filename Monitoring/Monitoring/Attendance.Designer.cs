@@ -71,7 +71,6 @@
             label24 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             submitAttendance = new Button();
-            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -342,7 +341,6 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(107, 23);
             dateTimePicker1.TabIndex = 22;
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged_1;
             // 
             // label8
             // 
@@ -540,23 +538,12 @@
             submitAttendance.UseVisualStyleBackColor = true;
             submitAttendance.Click += submitAttendance_Click;
             // 
-            // button1
-            // 
-            button1.Location = new Point(510, 392);
-            button1.Name = "button1";
-            button1.Size = new Size(101, 22);
-            button1.TabIndex = 60;
-            button1.Text = "Checking";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // Attendance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(734, 418);
-            Controls.Add(button1);
             Controls.Add(submitAttendance);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(label12);
@@ -669,6 +656,5 @@
         private Label label24;
         private FlowLayoutPanel flowLayoutPanel1;
         private Button submitAttendance;
-        private Button button1;
     }
 }
