@@ -1,4 +1,5 @@
-﻿namespace Monitoring
+﻿
+namespace Monitoring
 {
     partial class Attendance
     {
@@ -45,6 +46,7 @@
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
+            panel7 = new Panel();
             panel4 = new Panel();
             label22 = new Label();
             panel5 = new Panel();
@@ -220,6 +222,7 @@
             label3.Size = new Size(92, 20);
             label3.TabIndex = 10;
             label3.Text = "Class Report";
+            label3.Click += label3_Click;
             // 
             // label4
             // 
@@ -266,12 +269,23 @@
             // panel3
             // 
             panel3.BackColor = Color.LightBlue;
+            panel3.Controls.Add(panel7);
             panel3.Controls.Add(pictureBox2);
             panel3.Location = new Point(10, 188);
             panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
             panel3.Size = new Size(164, 43);
             panel3.TabIndex = 15;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.LightBlue;
+            panel7.Location = new Point(2, 0);
+            panel7.Margin = new Padding(3, 2, 3, 2);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(159, 43);
+            panel7.TabIndex = 60;
+            panel7.Paint += panel7_Paint;
             // 
             // panel4
             // 
@@ -341,11 +355,12 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(107, 23);
             dateTimePicker1.TabIndex = 22;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged_1;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(488, 65);
+            label8.Location = new Point(462, 65);
             label8.Name = "label8";
             label8.Size = new Size(37, 15);
             label8.TabIndex = 23;
@@ -354,11 +369,13 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(533, 63);
+            comboBox1.Items.AddRange(new object[] { "APPLICATIONS DEVT LAB", "APPLICATIONS DEVT LEC", "COMPUTER PROG LAB", "COMPUTER PROG LEC", "OBJECT ORIENTED PROG LAB", "OBJECT ORIENTED PROG LEC" });
+            comboBox1.Location = new Point(509, 63);
             comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(119, 23);
+            comboBox1.Size = new Size(165, 23);
             comboBox1.TabIndex = 24;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // pictureBox10
             // 
@@ -375,7 +392,7 @@
             label9.AutoSize = true;
             label9.BackColor = Color.MintCream;
             label9.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(206, 94);
+            label9.Location = new Point(206, 95);
             label9.Name = "label9";
             label9.Size = new Size(80, 13);
             label9.TabIndex = 27;
@@ -467,7 +484,7 @@
             label10.AutoSize = true;
             label10.BackColor = Color.MintCream;
             label10.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(351, 94);
+            label10.Location = new Point(351, 95);
             label10.Name = "label10";
             label10.Size = new Size(62, 13);
             label10.TabIndex = 46;
@@ -478,7 +495,7 @@
             label11.AutoSize = true;
             label11.BackColor = Color.MintCream;
             label11.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(447, 96);
+            label11.Location = new Point(453, 95);
             label11.Name = "label11";
             label11.Size = new Size(45, 13);
             label11.TabIndex = 47;
@@ -491,7 +508,7 @@
             label12.AutoSize = true;
             label12.BackColor = Color.MintCream;
             label12.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(520, 96);
+            label12.Location = new Point(520, 95);
             label12.Name = "label12";
             label12.Size = new Size(43, 13);
             label12.TabIndex = 48;
@@ -502,7 +519,7 @@
             label13.AutoSize = true;
             label13.BackColor = Color.MintCream;
             label13.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(593, 94);
+            label13.Location = new Point(593, 95);
             label13.Name = "label13";
             label13.Size = new Size(28, 13);
             label13.TabIndex = 48;
@@ -513,11 +530,11 @@
             label24.AutoSize = true;
             label24.BackColor = Color.MintCream;
             label24.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label24.Location = new Point(648, 96);
+            label24.Location = new Point(645, 95);
             label24.Name = "label24";
-            label24.Size = new Size(41, 13);
+            label24.Size = new Size(48, 13);
             label24.TabIndex = 48;
-            label24.Text = "Excuse";
+            label24.Text = "Excused";
             // 
             // flowLayoutPanel1
             // 
@@ -536,7 +553,7 @@
             submitAttendance.TabIndex = 59;
             submitAttendance.Text = "Submit";
             submitAttendance.UseVisualStyleBackColor = true;
-            submitAttendance.Click += submitAttendance_Click;
+            submitAttendance.Click += submitAttendance_Click_1;
             // 
             // Attendance
             // 
@@ -656,5 +673,6 @@
         private Label label24;
         private FlowLayoutPanel flowLayoutPanel1;
         private Button submitAttendance;
+        private Panel panel7;
     }
 }
