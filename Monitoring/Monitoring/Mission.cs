@@ -26,60 +26,76 @@ namespace Monitoring
 
         }
 
-        private void pictureBox6_Click(object sender, EventArgs e)
+        private void pictureBox6_Click_1(object sender, EventArgs e)
         {
             Courses courseForm = new Courses(loggedInUser);
             courseForm.Show();
             this.Hide();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label1_Click_1(object sender, EventArgs e)
         {
             Courses courseForm = new Courses(loggedInUser);
             courseForm.Show();
             this.Hide();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void pictureBox4_Click_1(object sender, EventArgs e)
         {
             StudentViewAttendance AttendanceStudent = new StudentViewAttendance(loggedInUser);
             AttendanceStudent.Show();
             this.Hide();
+
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void label2_Click_1(object sender, EventArgs e)
         {
             StudentViewAttendance AttendanceStudent = new StudentViewAttendance(loggedInUser);
             AttendanceStudent.Show();
             this.Hide();
+
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void pictureBox5_Click_1(object sender, EventArgs e)
         {
             Mission StudentMission = new Mission(loggedInUser);
             StudentMission.Show();
             this.Hide();
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void label3_Click_1(object sender, EventArgs e)
         {
             Mission StudentMission = new Mission(loggedInUser);
             StudentMission.Show();
             this.Hide();
         }
 
-        private void pictureBox7_Click(object sender, EventArgs e)
+        private void pictureBox7_Click_1(object sender, EventArgs e)
         {
             Vision StudentVision = new Vision(loggedInUser);
             StudentVision.Show();
             this.Hide();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void label4_Click_1(object sender, EventArgs e)
         {
             Vision StudentVision = new Vision(loggedInUser);
             StudentVision.Show();
             this.Hide();
+        }
+
+        private void pictureBox8_Click_1(object sender, EventArgs e)
+        {
+            Form1 Form = new Form1();
+            Form.Show();
+            this.Close();
+        }
+
+        private void label6_Click_1(object sender, EventArgs e)
+        {
+            Form1 Form = new Form1();
+            Form.Show();
+            this.Close();
         }
     }
 }

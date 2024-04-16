@@ -28,7 +28,12 @@ namespace Monitoring
             AttendanceStudent.Show();
             this.Hide();
         }
-
+        private void label2_Click(object sender, EventArgs e)
+        {
+            StudentViewAttendance AttendanceStudent = new StudentViewAttendance(loggedInUser);
+            AttendanceStudent.Show();
+            this.Hide();
+        }
         private void label5_Click(object sender, EventArgs e)
         {
 
@@ -39,47 +44,30 @@ namespace Monitoring
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+
+
+        private void pictureBox6_Click_1(object sender, EventArgs e)
         {
             Courses courseForm = new Courses(loggedInUser);
             courseForm.Show();
             this.Hide();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
+        private void label1_Click_1(object sender, EventArgs e)
         {
             Courses courseForm = new Courses(loggedInUser);
             courseForm.Show();
             this.Hide();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-            StudentViewAttendance AttendanceStudent = new StudentViewAttendance(loggedInUser);
-            AttendanceStudent.Show();
-            this.Hide();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-            Vision StudentVision = new Vision(loggedInUser);
-            StudentVision.Show();
-            this.Hide();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
+        private void pictureBox5_Click(object sender, EventArgs e)
         {
             Mission StudentMission = new Mission(loggedInUser);
             StudentMission.Show();
             this.Hide();
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
             Mission StudentMission = new Mission(loggedInUser);
             StudentMission.Show();
@@ -91,6 +79,27 @@ namespace Monitoring
             Vision StudentVision = new Vision(loggedInUser);
             StudentVision.Show();
             this.Hide();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Vision StudentVision = new Vision(loggedInUser);
+            StudentVision.Show();
+            this.Hide();
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            Form1 Form = new Form1();
+            Form.Show();
+            this.Close();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Form1 Form = new Form1();
+            Form.Show();
+            this.Close();
         }
     }
 }

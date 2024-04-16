@@ -132,7 +132,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(134, 43);
             panel1.TabIndex = 22;
-            panel1.Paint += panel1_Paint;
             // 
             // pictureBox6
             // 
@@ -145,7 +144,7 @@
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox6.TabIndex = 3;
             pictureBox6.TabStop = false;
-            pictureBox6.Click += pictureBox6_Click;
+            pictureBox6.Click += pictureBox6_Click_1;
             // 
             // label1
             // 
@@ -157,7 +156,7 @@
             label1.Size = new Size(62, 20);
             label1.TabIndex = 8;
             label1.Text = "Courses";
-            label1.Click += label1_Click;
+            label1.Click += label1_Click_1;
             // 
             // panel2
             // 
@@ -288,6 +287,7 @@
             label6.Size = new Size(68, 20);
             label6.TabIndex = 13;
             label6.Text = "Sign Out";
+            label6.Click += label6_Click;
             // 
             // pictureBox8
             // 
@@ -300,18 +300,18 @@
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 8;
             pictureBox8.TabStop = false;
+            pictureBox8.Click += pictureBox8_Click;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.LightBlue;
             label7.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(182, 9);
+            label7.Location = new Point(315, 14);
             label7.Name = "label7";
             label7.Size = new Size(238, 32);
             label7.TabIndex = 28;
             label7.Text = "NAME OF STUDENT";
-            label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label5
             // 

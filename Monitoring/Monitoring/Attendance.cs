@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using GroupBox = System.Windows.Forms.GroupBox;
+using RadioButton = System.Windows.Forms.RadioButton;
 using static Monitoring.Form1;
 
 namespace Monitoring
@@ -111,16 +114,34 @@ namespace Monitoring
         //FOR TEST CASE
         public string[] students = { "Student1", "Student2", "Student3", "Student4", "Student5" };
         public string[] studentID = { "ID1", "ID2", "ID3", "ID4", "ID5" };
-        private int[] studentStatus;
-
+        public int[] attendanceStatus;
+        public DateTime date = new DateTime();
+        public int subject;
+        public Status attendance;
         private UserData loggedInUser;
+
+        public class Status
+        {
+            public DateTime DateTimeStamp { get; set; }
+            public int[] AttendanceStatus { get; set; }
+            public int Subject { get; set; }
+            public Status(DateTime dateTimeStamp, int[] attendanceStatus, int subject)
+
+            {
+                DateTimeStamp = dateTimeStamp;
+                AttendanceStatus = attendanceStatus;
+                Subject = subject;
+            }
+
+        }
 
         public Attendance(UserData userData)
         {
             InitializeComponent();
             CreateGroupBoxes();
             this.loggedInUser = userData;
-            studentStatus = new int[students.Length];
+            attendanceStatus = new int[students.Length];
+            comboBox1.SelectedIndex = 0;
 
         }
         private void CreateGroupBoxes()
@@ -152,7 +173,8 @@ namespace Monitoring
                         if (btn.Checked)
                         {
                             int index = (btn.Parent as GroupBox).TabIndex; // Get the index of the group box
-                            studentStatus[index] = Array.IndexOf(btn.Parent.Controls.OfType<RadioButton>().ToArray(), btn) + 1; // Store the selected index
+                            attendanceStatus[index] = Array.IndexOf(btn.Parent.Controls.OfType<RadioButton>().ToArray(), btn) + 1; // Store the selected index
+                            // 4 - Present, 3 - Absent, 2 - Late, 1 - Excused, 0 - No input
                         }
                     };
 
@@ -162,61 +184,30 @@ namespace Monitoring
                 groupBox.TabIndex = i;
             }
         }
+        List<int> selectedIndexList = new List<int>();
 
-
-
-
-
-
-
-        private void submitAttendance_Click(object sender, EventArgs e)
+        private void SubmitAttendance(object sender, EventArgs e, Status status)
         {
 
             //FOR CHECKING
-            AllocConsole();
-            foreach (int selectedIndex in studentStatus)
+            /*AllocConsole();
+            foreach (int selectedIndex in attendanceStatus)
             {
                 Console.WriteLine(selectedIndex);
-            }
+            }*/
+
         }
 
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool AllocConsole();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Courses courseForm = new Courses(loggedInUser);
-            courseForm.Show();
-            this.Hide();
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }
@@ -236,56 +227,65 @@ namespace Monitoring
 
         }
 
-        private void label21_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label474_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label570_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label948_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
         {
-            Courses courseForm = new Courses(loggedInUser);
-            courseForm.Show();
-            this.Hide();
+            date = dateTimePicker1.Value;
         }
 
-        private void pictureBox4_Click_1(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            subject = comboBox1.SelectedIndex;
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        private void displayClassReport(object sender, EventArgs e)
+        {
+
+        }
+
+        private void submitAttendance_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Submitted successfully.");
+            attendance = new Status(date, attendanceStatus, subject);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            ClassReport classReport = new ClassReport();
+            classReport.GetData(students, studentID, attendance);
+            classReport.Show();
+        }
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            ClassReport classReport = new ClassReport();
+            classReport.GetData(students, studentID, attendance);
+            classReport.Show();
+        }
+
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            Form1 Form = new Form1();
+            Form.Show();
+            this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Form1 Form = new Form1();
+            Form.Show();
+            this.Close();
+        }
+
+
     }
 }

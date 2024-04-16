@@ -133,7 +133,7 @@
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox6.TabIndex = 3;
             pictureBox6.TabStop = false;
-            pictureBox6.Click += pictureBox6_Click;
+            pictureBox6.Click += pictureBox6_Click_1;
             // 
             // label1
             // 
@@ -145,7 +145,7 @@
             label1.Size = new Size(62, 20);
             label1.TabIndex = 8;
             label1.Text = "Courses";
-            label1.Click += label1_Click;
+            label1.Click += label1_Click_1;
             // 
             // panel2
             // 
@@ -168,7 +168,7 @@
             label2.Size = new Size(87, 20);
             label2.TabIndex = 16;
             label2.Text = "Attendance";
-            label2.Click += label2_Click;
+            label2.Click += label2_Click_1;
             // 
             // pictureBox4
             // 
@@ -181,7 +181,7 @@
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 16;
             pictureBox4.TabStop = false;
-            pictureBox4.Click += pictureBox4_Click;
+            pictureBox4.Click += pictureBox4_Click_1;
             // 
             // panel3
             // 
@@ -204,7 +204,7 @@
             label3.Size = new Size(61, 20);
             label3.TabIndex = 17;
             label3.Text = "Mission";
-            label3.Click += label3_Click;
+            label3.Click += label3_Click_1;
             // 
             // pictureBox5
             // 
@@ -217,7 +217,7 @@
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 25;
             pictureBox5.TabStop = false;
-            pictureBox5.Click += pictureBox5_Click;
+            pictureBox5.Click += pictureBox5_Click_1;
             // 
             // panel4
             // 
@@ -240,7 +240,7 @@
             label4.Size = new Size(51, 20);
             label4.TabIndex = 17;
             label4.Text = "Vision";
-            label4.Click += label4_Click;
+            label4.Click += label4_Click_1;
             // 
             // pictureBox7
             // 
@@ -253,7 +253,7 @@
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox7.TabIndex = 25;
             pictureBox7.TabStop = false;
-            pictureBox7.Click += pictureBox7_Click;
+            pictureBox7.Click += pictureBox7_Click_1;
             // 
             // panel5
             // 
@@ -276,6 +276,7 @@
             label6.Size = new Size(68, 20);
             label6.TabIndex = 13;
             label6.Text = "Sign Out";
+            label6.Click += label6_Click_1;
             // 
             // pictureBox8
             // 
@@ -288,6 +289,7 @@
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 8;
             pictureBox8.TabStop = false;
+            pictureBox8.Click += pictureBox8_Click_1;
             // 
             // pictureBox9
             // 
