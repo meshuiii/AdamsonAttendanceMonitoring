@@ -14,109 +14,109 @@ namespace Monitoring
     public partial class Attendance : Form
     {
 
-/*
-public string[] students = {
-    "AGAN, Michael Christian",
-    "ALANGSAB, Riqueta",
-    "AÑASCO, Althea Zoe",
-    "AÑONUEVO, Chrysler",
-    "ATIM, Arielle Ershey",
-    "BAUTISTA, George Kiel",
-    "BECINA, Cyrill John",
-    "BIADOR, Mark Jacob",
-    "CABILAN, Rafael",
-    "CAPATI, Kentver",
-    "CASTILLO, Kristian Jerome",
-    "CONCEPCION, Lee Hendrix",
-    "DE GULA, Kerby Brent",
-    "DEL PRADO, Jerryco",
-    "DIAZANA, John Darren",
-    "DUMALAG, Jordan",
-    "EDILLON, Joshua Lloyd",
-    "ESCAÑO, Krisha Ann Ame",
-    "ESPAÑOL, Jem Theonie",
-    "GAPASIN, Michael Andrei",
-    "GARCIA, Enjo Mae",
-    "GRICO, Cirgs Alyxander",
-    "LEYESA, Dann Martin",
-    "LUZON, Adrian Dominic",
-    "MADIO, Jonalyn",
-    "MARTINEZ, Hero",
-    "MENDOZA, Wellhemstad",
-    "MERCADO, Nico",
-    "PANAGA, Charry",
-    "PINLAC, Kenji Luis",
-    "QUIJANO, Tim",
-    "QUILATAN, Marcis Joseph",
-    "REYNANCIA, Jessie Lei",
-    "RODRIGUEZ, Rhegille Gabriel",
-    "SAMACO, Cyrus",
-    "SILANG, Le Bron James",
-    "SIMON, Kielle Francez",
-    "SOLO, John",
-    "STA. ANA, Mary Angelique",
-    "TAGLE, Jel Kyann",
-    "VARELA, Venice Ariane",
-    "YABUT, Aleerah Marishka",
-    "ZAPATA, Kurt Anthony"
-        };
-        
+        /*
+        public string[] students = {
+            "AGAN, Michael Christian",
+            "ALANGSAB, Riqueta",
+            "AÑASCO, Althea Zoe",
+            "AÑONUEVO, Chrysler",
+            "ATIM, Arielle Ershey",
+            "BAUTISTA, George Kiel",
+            "BECINA, Cyrill John",
+            "BIADOR, Mark Jacob",
+            "CABILAN, Rafael",
+            "CAPATI, Kentver",
+            "CASTILLO, Kristian Jerome",
+            "CONCEPCION, Lee Hendrix",
+            "DE GULA, Kerby Brent",
+            "DEL PRADO, Jerryco",
+            "DIAZANA, John Darren",
+            "DUMALAG, Jordan",
+            "EDILLON, Joshua Lloyd",
+            "ESCAÑO, Krisha Ann Ame",
+            "ESPAÑOL, Jem Theonie",
+            "GAPASIN, Michael Andrei",
+            "GARCIA, Enjo Mae",
+            "GRICO, Cirgs Alyxander",
+            "LEYESA, Dann Martin",
+            "LUZON, Adrian Dominic",
+            "MADIO, Jonalyn",
+            "MARTINEZ, Hero",
+            "MENDOZA, Wellhemstad",
+            "MERCADO, Nico",
+            "PANAGA, Charry",
+            "PINLAC, Kenji Luis",
+            "QUIJANO, Tim",
+            "QUILATAN, Marcis Joseph",
+            "REYNANCIA, Jessie Lei",
+            "RODRIGUEZ, Rhegille Gabriel",
+            "SAMACO, Cyrus",
+            "SILANG, Le Bron James",
+            "SIMON, Kielle Francez",
+            "SOLO, John",
+            "STA. ANA, Mary Angelique",
+            "TAGLE, Jel Kyann",
+            "VARELA, Venice Ariane",
+            "YABUT, Aleerah Marishka",
+            "ZAPATA, Kurt Anthony"
+                };
 
-        
-         public string[] studentID = {"202320107",
-    "202312640",
-    "202311220",
-    "202313737",
-    "202311985",
-    "202311009",
-    "202314266",
-    "202311209",
-    "201811248",
-    "202313091",
-    "202310421",
-    "202310879",
-    "202312442",
-    "202311626",
-    "202313294",
-    "202310447",
-    "202311579",
-    "202310673",
-    "202314222",
-    "202312225",
-    "202311127",
-    "202312392",
-    "202312710",
-    "202312813",
-    "202311906",
-    "202313046",
-    "202310536",
-    "202313050",
-    "202116311",
-    "202310292",
-    "202313343",
-    "202313882",
-    "202311528",
-    "202119459",
-    "202313427",
-    "202311959",
-    "202311615",
-    "202310850",
-    "202313020",
-    "202313899",
-    "202310728",
-    "202312834",
-    "202312647" };
-        */
+
+
+                 public string[] studentID = {"202320107",
+            "202312640",
+            "202311220",
+            "202313737",
+            "202311985",
+            "202311009",
+            "202314266",
+            "202311209",
+            "201811248",
+            "202313091",
+            "202310421",
+            "202310879",
+            "202312442",
+            "202311626",
+            "202313294",
+            "202310447",
+            "202311579",
+            "202310673",
+            "202314222",
+            "202312225",
+            "202311127",
+            "202312392",
+            "202312710",
+            "202312813",
+            "202311906",
+            "202313046",
+            "202310536",
+            "202313050",
+            "202116311",
+            "202310292",
+            "202313343",
+            "202313882",
+            "202311528",
+            "202119459",
+            "202313427",
+            "202311959",
+            "202311615",
+            "202310850",
+            "202313020",
+            "202313899",
+            "202310728",
+            "202312834",
+            "202312647" };
+                */
         //FOR TEST CASE
-      public string[] students = { "Student1", "Student2", "Student3", "Student4", "Student5" };
-      public string[] studentID = { "ID1", "ID2", "ID3", "ID4", "ID5" };
-        private int[] selectedIndexes; 
+        public string[] students = { "Student1", "Student2", "Student3", "Student4", "Student5" };
+        public string[] studentID = { "ID1", "ID2", "ID3", "ID4", "ID5" };
+        private int[] studentStatus;
 
         public Attendance()
         {
             InitializeComponent();
             CreateGroupBoxes();
-            selectedIndexes = new int[students.Length];
+            studentStatus = new int[students.Length];
 
         }
         private void CreateGroupBoxes()
@@ -148,10 +148,10 @@ public string[] students = {
                         if (btn.Checked)
                         {
                             int index = (btn.Parent as GroupBox).TabIndex; // Get the index of the group box
-                            selectedIndexes[index] = Array.IndexOf(btn.Parent.Controls.OfType<RadioButton>().ToArray(), btn) + 1; // Store the selected index
+                            studentStatus[index] = Array.IndexOf(btn.Parent.Controls.OfType<RadioButton>().ToArray(), btn) + 1; // Store the selected index
                         }
                     };
-          
+
                     groupBox.Controls.Add(radioButton);
                 }
                 flowLayoutPanel1.Controls.Add(groupBox);
@@ -160,21 +160,19 @@ public string[] students = {
         }
         List<int> selectedIndexList = new List<int>();
 
-     
 
 
 
 
+
+        private Dictionary<DateTime, int[]> attendanceData = new Dictionary<DateTime, int[]>();
 
         private void submitAttendance_Click(object sender, EventArgs e)
         {
-
-            //FOR CHECKING
-            AllocConsole();
-            foreach (int selectedIndex in selectedIndexes)
-            {
-                Console.WriteLine(selectedIndex);
-            }
+            // Get the selected date from the DateTimePicker
+            DateTime selectedDate = dateTimePicker1.Value;
+            // Store the date along with the array data
+            attendanceData[selectedDate] = studentStatus.ToArray();
         }
 
         [DllImport("kernel32.dll", SetLastError = true)]
@@ -182,6 +180,22 @@ public string[] students = {
         static extern bool AllocConsole();
 
 
+        //FOR CHECKING
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AllocConsole();
+            Console.WriteLine("Attendance Data:");
+            foreach (var entry in attendanceData)
+            {
+                Console.WriteLine("Date: " + entry.Key.ToString("yyyy-MM-dd"));
+                Console.WriteLine("Array Data:");
+                foreach (int index in entry.Value)
+                {
+                    Console.WriteLine(index);
+                }
+                Console.WriteLine(); // Add a blank line for separation
+            }
+        }
 
 
 
@@ -267,6 +281,11 @@ public string[] students = {
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
         {
 
         }
