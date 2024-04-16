@@ -158,13 +158,9 @@ public string[] students = {
                 groupBox.TabIndex = i;
             }
         }
-        List<int> studentStatusList = new List<int>();
+        List<int> studentStatusLis = new List<int>();
 
      
-
-
-
-
 
         private void submitAttendance_Click(object sender, EventArgs e)
         {
