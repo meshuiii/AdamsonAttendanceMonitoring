@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Monitoring")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+242e6d60579c5a5fc7f95fcda7d9bc790e6661ac")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3971f9a9c800ba7172eefc17cd6b3c8ba39eccc")]
+>>>>>>> parent of 58f8ad0 (Updated attendance)
 [assembly: System.Reflection.AssemblyProductAttribute("Monitoring")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Monitoring")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
