@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Monitoring.Form1;
+using static Monitoring.Login;
 
 namespace Monitoring
 {
@@ -90,14 +90,14 @@ namespace Monitoring
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-            Form1 Form = new Form1();
+            Login Form = new Login();
             Form.Show();
             this.Close();
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
-            Form1 Form = new Form1();
+            Login Form = new Login();
             Form.Show();
             this.Close();
         }

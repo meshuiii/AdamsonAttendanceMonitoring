@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Monitoring.Form1;
+using static Monitoring.Login;
 
 namespace Monitoring
 {

@@ -179,6 +179,7 @@ namespace Monitoring
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox7.TabIndex = 6;
             pictureBox7.TabStop = false;
+            pictureBox7.Click += pictureBox7_Click;
             // 
             // pictureBox8
             // 
@@ -198,7 +199,7 @@ namespace Monitoring
             label1.AutoSize = true;
             label1.BackColor = Color.LightBlue;
             label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(53, 10);
+            label1.Location = new Point(62, 10);
             label1.Name = "label1";
             label1.Size = new Size(62, 20);
             label1.TabIndex = 8;
@@ -215,6 +216,7 @@ namespace Monitoring
             label2.Size = new Size(87, 20);
             label2.TabIndex = 9;
             label2.Text = "Attendance";
+            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -238,6 +240,7 @@ namespace Monitoring
             label4.Size = new Size(92, 20);
             label4.TabIndex = 11;
             label4.Text = "Total Report";
+            label4.Click += label4_Click;
             // 
             // label5
             // 
@@ -259,7 +262,7 @@ namespace Monitoring
             panel1.Location = new Point(10, 94);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(134, 43);
+            panel1.Size = new Size(159, 43);
             panel1.TabIndex = 13;
             // 
             // panel2
@@ -288,7 +291,7 @@ namespace Monitoring
             panel7.Location = new Point(2, 0);
             panel7.Margin = new Padding(3, 2, 3, 2);
             panel7.Name = "panel7";
-            panel7.Size = new Size(159, 43);
+            panel7.Size = new Size(157, 43);
             panel7.TabIndex = 60;
             panel7.Paint += panel7_Paint;
             // 
@@ -299,7 +302,7 @@ namespace Monitoring
             panel4.Location = new Point(10, 236);
             panel4.Margin = new Padding(3, 2, 3, 2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(164, 43);
+            panel4.Size = new Size(159, 43);
             panel4.TabIndex = 16;
             // 
             // label22
@@ -318,7 +321,7 @@ namespace Monitoring
             panel5.Location = new Point(10, 280);
             panel5.Margin = new Padding(3, 2, 3, 2);
             panel5.Name = "panel5";
-            panel5.Size = new Size(164, 45);
+            panel5.Size = new Size(159, 45);
             panel5.TabIndex = 17;
             // 
             // label6

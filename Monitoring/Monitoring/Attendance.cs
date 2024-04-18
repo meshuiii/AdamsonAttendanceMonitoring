@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using GroupBox = System.Windows.Forms.GroupBox;
 using RadioButton = System.Windows.Forms.RadioButton;
-using static Monitoring.Form1;
+using static Monitoring.Login;
 
 namespace Monitoring
 {
@@ -118,7 +118,8 @@ namespace Monitoring
         public DateTime date = new DateTime();
         public int subject;
         public Status attendance;
-        private UserData loggedInUser;
+        public UserData loggedInUser;
+        public static List<Status> attendanceList = new List<Status>();
 
         public class Status
         {
@@ -143,8 +144,6 @@ namespace Monitoring
             attendanceStatus = new int[students.Length];
             comboBox1.SelectedIndex = 0;
             date = DateTime.Today;
-
-
         }
         private void CreateGroupBoxes()
         {
@@ -269,7 +268,7 @@ namespace Monitoring
         private void label3_Click(object sender, EventArgs e)
         {
             ClassReport classReport = new ClassReport(attendanceList);
-            classReport.GetData(students, studentID, attendance, subject);
+            classReport.GetData(students, studentID, subject);
             classReport.Show();
             this.Hide();
 
@@ -277,7 +276,7 @@ namespace Monitoring
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             ClassReport classReport = new ClassReport(attendanceList);
-            classReport.GetData(students, studentID, attendance, subject);
+            classReport.GetData(students, studentID, subject);
             classReport.Show();
             this.Hide();
         }
@@ -285,16 +284,16 @@ namespace Monitoring
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-            Form1 Form = new Form1();
+            Login Form = new Login();
             Form.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
-            Form1 Form = new Form1();
+            Login Form = new Login();
             Form.Show();
-            this.Close();
+            this.Hide();
         }
         private void PrintAttendanceList()
         {
@@ -310,7 +309,6 @@ namespace Monitoring
                 Console.WriteLine();
             }
         }
-        public static List<Status> attendanceList = new List<Status>();
 
         private string GetAttendanceStatus(int status)
         {
@@ -339,7 +337,26 @@ namespace Monitoring
         {
             Courses courseNew = new Courses(loggedInUser);
             courseNew.Show();
-            this.Close();
+            this.Hide();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            TotalReport totalReport = new TotalReport(students, studentID, attendanceList);
+            totalReport.Show();
+            this.Hide();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            TotalReport totalReport = new TotalReport(students, studentID, attendanceList);
+            totalReport.Show();
+            this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
