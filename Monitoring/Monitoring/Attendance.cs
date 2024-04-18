@@ -142,6 +142,8 @@ namespace Monitoring
             this.loggedInUser = userData;
             attendanceStatus = new int[students.Length];
             comboBox1.SelectedIndex = 0;
+            date = DateTime.Today;
+
 
         }
         private void CreateGroupBoxes()
@@ -183,19 +185,6 @@ namespace Monitoring
                 flowLayoutPanel1.Controls.Add(groupBox);
                 groupBox.TabIndex = i;
             }
-        }
-        List<int> selectedIndexList = new List<int>();
-
-        private void SubmitAttendance(object sender, EventArgs e, Status status)
-        {
-
-            //FOR CHECKING
-            /*AllocConsole();
-            foreach (int selectedIndex in attendanceStatus)
-            {
-                Console.WriteLine(selectedIndex);
-            }*/
-
         }
 
         [DllImport("kernel32.dll", SetLastError = true)]
@@ -255,19 +244,36 @@ namespace Monitoring
         private void submitAttendance_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show("Submitted successfully.");
-            attendance = new Status(date, attendanceStatus, subject);
+
+            
+            Status existingRecord = attendanceList.FirstOrDefault(record => record.DateTimeStamp.Date == date.Date && record.Subject == subject);
+
+            if (existingRecord != null)
+            {
+                // Update existing record
+                existingRecord.AttendanceStatus = attendanceStatus.ToArray();
+                existingRecord.Subject = subject;
+            }
+            else
+            {
+                // Create new record
+                Status attendanceRecord = new Status(new DateTime(date.Year, date.Month, date.Day), attendanceStatus.ToArray(), subject);
+                attendanceList.Add(attendanceRecord); // Add attendance to the list
+            }
+
+            // Print the attendance list to the console
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-            ClassReport classReport = new ClassReport();
-            classReport.GetData(students, studentID, attendance);
+            ClassReport classReport = new ClassReport(attendanceList);
+            classReport.GetData(students, studentID, attendance, subject);
             classReport.Show();
         }
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            ClassReport classReport = new ClassReport();
-            classReport.GetData(students, studentID, attendance);
+            ClassReport classReport = new ClassReport(attendanceList);
+            classReport.GetData(students, studentID, attendance, subject);
             classReport.Show();
         }
 
@@ -285,7 +291,44 @@ namespace Monitoring
             Form.Show();
             this.Close();
         }
+        private void PrintAttendanceList()
+        {
+            foreach (var attendanceRecord in attendanceList)
+            {
+                Console.WriteLine("Date: " + attendanceRecord.DateTimeStamp);
+                Console.WriteLine("Subject: " + attendanceRecord.Subject);
+                Console.WriteLine("Attendance Status:");
+                for (int i = 0; i < attendanceRecord.AttendanceStatus.Length; i++)
+                {
+                    Console.WriteLine(students[i] + ": " + GetAttendanceStatus(attendanceRecord.AttendanceStatus[i]));
+                }
+                Console.WriteLine();
+            }
+        }
+        private List<Status> attendanceList = new List<Status>();
 
+        private string GetAttendanceStatus(int status)
+        {
+            switch (status)
+            {
+                case 4:
+                    return "Present";
+                case 3:
+                    return "Absent";
+                case 2:
+                    return "Late";
+                case 1:
+                    return "Excused";
+                default:
+                    return "No input";
+            }
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AllocConsole();
+            PrintAttendanceList();
+
+        }
     }
 }
