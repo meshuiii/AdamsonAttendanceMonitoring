@@ -166,6 +166,7 @@ namespace Monitoring
             label2.Size = new Size(87, 20);
             label2.TabIndex = 16;
             label2.Text = "Attendance";
+            label2.Click += label2_Click;
             // 
             // pictureBox4
             // 
@@ -178,6 +179,7 @@ namespace Monitoring
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 16;
             pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // panel4
             // 
@@ -291,6 +293,7 @@ namespace Monitoring
             label6.Size = new Size(68, 20);
             label6.TabIndex = 13;
             label6.Text = "Sign Out";
+            label6.Click += label6_Click;
             // 
             // pictureBox8
             // 
@@ -303,6 +306,7 @@ namespace Monitoring
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 8;
             pictureBox8.TabStop = false;
+            pictureBox8.Click += pictureBox8_Click;
             // 
             // pictureBox3
             // 

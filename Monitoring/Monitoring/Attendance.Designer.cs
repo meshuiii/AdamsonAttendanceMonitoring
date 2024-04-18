@@ -203,6 +203,7 @@ namespace Monitoring
             label1.Size = new Size(62, 20);
             label1.TabIndex = 8;
             label1.Text = "Courses";
+            label1.Click += label1_Click;
             // 
             // label2
             // 

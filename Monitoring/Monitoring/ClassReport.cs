@@ -153,17 +153,53 @@ namespace Monitoring
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-
+            Courses coursesForm = Application.OpenForms["Courses"] as Courses;
+            coursesForm.Show();
+            coursesForm.BringToFront();
+            this.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            Courses coursesForm = Application.OpenForms["Courses"] as Courses;
+            coursesForm.Show();
+            coursesForm.BringToFront();
+            this.Close();
         }
 
         private void ClassReport_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Attendance attendanceForm = Application.OpenForms["Attendance"] as Attendance;
+            attendanceForm.Show();
+            attendanceForm.BringToFront();
+            this.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Attendance attendanceForm = Application.OpenForms["Attendance"] as Attendance;
+            attendanceForm.Show();
+            attendanceForm.BringToFront();
+            this.Close();
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            Form1 Form = new Form1();
+            Form.Show();
+            this.Close();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Form1 Form = new Form1();
+            Form.Show();
+            this.Close();
         }
     }
 }

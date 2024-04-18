@@ -193,7 +193,9 @@ namespace Monitoring
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-
+            Courses courseNew = new Courses(loggedInUser);
+            courseNew.Show();
+            this.Close();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -245,7 +247,7 @@ namespace Monitoring
         {
             MessageBox.Show("Submitted successfully.");
 
-            
+
             Status existingRecord = attendanceList.FirstOrDefault(record => record.DateTimeStamp.Date == date.Date && record.Subject == subject);
 
             if (existingRecord != null)
@@ -269,12 +271,15 @@ namespace Monitoring
             ClassReport classReport = new ClassReport(attendanceList);
             classReport.GetData(students, studentID, attendance, subject);
             classReport.Show();
+            this.Hide();
+
         }
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             ClassReport classReport = new ClassReport(attendanceList);
             classReport.GetData(students, studentID, attendance, subject);
             classReport.Show();
+            this.Hide();
         }
 
 
@@ -305,7 +310,7 @@ namespace Monitoring
                 Console.WriteLine();
             }
         }
-        private List<Status> attendanceList = new List<Status>();
+        public static List<Status> attendanceList = new List<Status>();
 
         private string GetAttendanceStatus(int status)
         {
@@ -328,7 +333,13 @@ namespace Monitoring
         {
             AllocConsole();
             PrintAttendanceList();
+        }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Courses courseNew = new Courses(loggedInUser);
+            courseNew.Show();
+            this.Close();
         }
     }
 }
