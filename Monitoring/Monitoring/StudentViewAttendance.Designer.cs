@@ -49,7 +49,6 @@
             pictureBox8 = new PictureBox();
             label7 = new Label();
             label5 = new Label();
-            label8 = new Label();
             pictureBox10 = new PictureBox();
             pictureBox9 = new PictureBox();
             pictureBox11 = new PictureBox();
@@ -69,6 +68,11 @@
             label18 = new Label();
             label19 = new Label();
             button1 = new Button();
+            comboBox1 = new ComboBox();
+            label20 = new Label();
+            label8 = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            label21 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -319,21 +323,12 @@
             label5.AutoSize = true;
             label5.BackColor = Color.SteelBlue;
             label5.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(370, 57);
+            label5.Location = new Point(182, 57);
             label5.Name = "label5";
             label5.Size = new Size(108, 30);
             label5.TabIndex = 29;
             label5.Text = "OVERALL";
             label5.Click += label5_Click;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(419, 85);
-            label8.Name = "label8";
-            label8.Size = new Size(23, 15);
-            label8.TabIndex = 30;
-            label8.Text = "0%";
             // 
             // pictureBox10
             // 
@@ -510,7 +505,7 @@
             label18.AutoSize = true;
             label18.BackColor = Color.MintCream;
             label18.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label18.Location = new Point(407, 138);
+            label18.Location = new Point(3, 0);
             label18.Name = "label18";
             label18.Size = new Size(39, 13);
             label18.TabIndex = 66;
@@ -531,7 +526,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(355, 222);
+            button1.Location = new Point(13, 317);
             button1.Name = "button1";
             button1.Size = new Size(147, 45);
             button1.TabIndex = 68;
@@ -539,12 +534,69 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "APPLICATIONS DEVT LAB", "APPLICATIONS DEVT LEC", "COMPUTER PROG LAB", "COMPUTER PROG LEC", "OBJECT ORIENTED PROG LAB", "OBJECT ORIENTED PROG LEC" });
+            comboBox1.Location = new Point(522, 66);
+            comboBox1.Margin = new Padding(3, 2, 3, 2);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(165, 23);
+            comboBox1.TabIndex = 70;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(479, 72);
+            label20.Name = "label20";
+            label20.Size = new Size(37, 15);
+            label20.TabIndex = 69;
+            label20.Text = "Class:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.SteelBlue;
+            label8.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(300, 57);
+            label8.Name = "label8";
+            label8.Size = new Size(45, 30);
+            label8.TabIndex = 71;
+            label8.Text = "0%";
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Location = new Point(186, 155);
+            flowLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(502, 198);
+            flowLayoutPanel1.TabIndex = 72;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.BackColor = Color.MintCream;
+            label21.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label21.Location = new Point(409, 138);
+            label21.Name = "label21";
+            label21.Size = new Size(39, 13);
+            label21.TabIndex = 73;
+            label21.Text = "Status";
+            label21.TextAlign = ContentAlignment.TopCenter;
+            // 
             // StudentViewAttendance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(700, 364);
+            Controls.Add(label21);
+            Controls.Add(flowLayoutPanel1);
+            Controls.Add(label8);
+            Controls.Add(comboBox1);
+            Controls.Add(label20);
             Controls.Add(button1);
             Controls.Add(label19);
             Controls.Add(label18);
@@ -564,7 +616,6 @@
             Controls.Add(pictureBox11);
             Controls.Add(pictureBox9);
             Controls.Add(pictureBox10);
-            Controls.Add(label8);
             Controls.Add(label5);
             Controls.Add(label7);
             Controls.Add(panel5);
@@ -630,7 +681,6 @@
         private PictureBox pictureBox8;
         private Label label7;
         private Label label5;
-        private Label label8;
         private PictureBox pictureBox10;
         private PictureBox pictureBox9;
         private PictureBox pictureBox11;
@@ -650,5 +700,10 @@
         private Label label18;
         private Label label19;
         private Button button1;
+        private ComboBox comboBox1;
+        private Label label20;
+        private Label label8;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label label21;
     }
 }

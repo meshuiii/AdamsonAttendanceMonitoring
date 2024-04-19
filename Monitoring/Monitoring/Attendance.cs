@@ -17,8 +17,8 @@ namespace Monitoring
 {
     public partial class Attendance : Form
     {
-
         /*
+        
         public string[] students = {
             "AGAN, Michael Christian",
             "ALANGSAB, Riqueta",
@@ -110,10 +110,22 @@ namespace Monitoring
             "202310728",
             "202312834",
             "202312647" };
-                */
+             */   
         //FOR TEST CASE
-        public string[] students = { "Student1", "Student2", "Student3", "Student4", "Student5" };
-        public string[] studentID = { "ID1", "ID2", "ID3", "ID4", "ID5" };
+        public string[] students = {             
+            "GAPASIN, Michael Andrei",
+            "GARCIA, Enjo Mae",
+            "GRICO, Cirgs Alyxander",
+            "LEYESA, Dann Martin",
+            "LUZON, Adrian Dominic",
+            "MADIO, Jonalyn" };
+        public string[] studentID = { 
+            "202312225",
+            "202311127",
+            "202312392",
+            "202312710",
+            "202312813",
+            "202311906" };
         public int[] attendanceStatus;
         public DateTime date = new DateTime();
         public int subject;
@@ -237,10 +249,6 @@ namespace Monitoring
 
         }
 
-        private void displayClassReport(object sender, EventArgs e)
-        {
-
-        }
 
         private void submitAttendance_Click_1(object sender, EventArgs e)
         {
@@ -262,10 +270,38 @@ namespace Monitoring
                 attendanceList.Add(attendanceRecord); // Add attendance to the list
             }
 
-            // Print the attendance list to the console
+            string selectedSubject = comboBox1.SelectedItem.ToString();
+
+            // Get the current date without the time component
+            DateTime currentDate = DateTime.Today;
+
+            // Update the attendance records in the Student class
+            for (int i = 0; i < students.Length; i++)
+            {
+                StudentAttendance attendanceRecord = new StudentAttendance
+                {
+                    StudentName = students[i],
+                    Date = currentDate, // Store only the date
+                    AttendanceStatus = attendanceStatus[i],
+                    Subject = selectedSubject // Use the selected subject for each attendance record
+                };
+
+                // Check if the record already exists in the list
+                int index = Student.AttendanceRecords.FindIndex(record => record.StudentName == students[i] && record.Date.Date == currentDate && record.Subject == selectedSubject);
+                if (index != -1)
+                {
+                    // Update existing record
+                    Student.AttendanceRecords[index] = attendanceRecord;
+                }
+                else
+                {
+                    // Add new record
+                    Student.AttendanceRecords.Add(attendanceRecord);
+                }
+            }
         }
 
-        private void label3_Click(object sender, EventArgs e)
+                private void label3_Click(object sender, EventArgs e)
         {
             ClassReport classReport = new ClassReport(attendanceList);
             classReport.GetData(students, studentID, subject);

@@ -6,17 +6,22 @@ using System.Threading.Tasks;
 
 namespace Monitoring
 {
-    public class Student
+    public class StudentAttendance
     {
-        public string Name { get; set; }
-        public string StudentID { get; set; }
-        public AttendanceRecord[] AttendanceRecords { get; set; }
+        public string StudentName { get; set; }
+        public DateTime Date { get; set; }
+        public int AttendanceStatus { get; set; }
+        public string Subject { get; set; }
     }
 
-    public class AttendanceRecord
+    public static class Student
     {
-        public DateTime Date { get; set; }
-        public int Status { get; set; } // Use integer to represent status
-        public string Subject { get; set; }
+        private static List<StudentAttendance> attendanceRecords = new List<StudentAttendance>();
+
+        public static List<StudentAttendance> AttendanceRecords
+        {
+            get { return attendanceRecords; }
+            set { attendanceRecords = value; }
+        }
     }
 }
