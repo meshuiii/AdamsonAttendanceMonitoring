@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -100,6 +101,29 @@ namespace Monitoring
             Login Form = new Login();
             Form.Show();
             this.Close();
+        }
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool AllocConsole();
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<Student> studentsList = StudentData.StudentsList;
+
+            AllocConsole();
+
+            if (studentsList != null)
+            {
+                foreach (var student in studentsList)
+                {
+                    Console.WriteLine($"Name: {student.Name}, ID: {student.ID}, Total Days Present: {student.TotalDaysPresent}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("StudentsList is empty or null.");
+            }
+
         }
     }
 }

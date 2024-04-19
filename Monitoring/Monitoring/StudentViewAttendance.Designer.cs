@@ -68,6 +68,7 @@
             label17 = new Label();
             label18 = new Label();
             label19 = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -307,7 +308,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.LightBlue;
             label7.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(315, 14);
+            label7.Location = new Point(182, 9);
             label7.Name = "label7";
             label7.Size = new Size(238, 32);
             label7.TabIndex = 28;
@@ -528,12 +529,23 @@
             label19.Text = "Grade";
             label19.TextAlign = ContentAlignment.TopCenter;
             // 
+            // button1
+            // 
+            button1.Location = new Point(355, 222);
+            button1.Name = "button1";
+            button1.Size = new Size(147, 45);
+            button1.TabIndex = 68;
+            button1.Text = "FOR CHECKING(CONSOLE.)";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // StudentViewAttendance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(700, 364);
+            Controls.Add(button1);
             Controls.Add(label19);
             Controls.Add(label18);
             Controls.Add(label17);
@@ -637,5 +649,6 @@
         private Label label17;
         private Label label18;
         private Label label19;
+        private Button button1;
     }
 }

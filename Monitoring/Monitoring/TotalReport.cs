@@ -27,9 +27,23 @@ namespace Monitoring
             StudentNo = studentNo;
             SelectedDate = DateTime.Now;
             StatusList = statusList;
+            InitializeStudentData(studentName, studentNo);
 
         }
 
+
+        private void InitializeStudentData(string[] studentNames, string[] studentIDs)
+        {
+            for (int i = 0; i < studentNames.Length; i++)
+            {
+                StudentData.StudentsList.Add(new Student
+                {
+                    Name = studentNames[i],
+                    ID = studentIDs[i],
+                    TotalDaysPresent = 0 // Initialize total days present to 0
+                });
+            }
+        }
         public void DisplayTotalReport()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -37,42 +51,47 @@ namespace Monitoring
             // Filter attendance records for the selected date and subject
             var matchingStatuses = StatusList.Where(status => status.Subject == SelectedSubject);
 
-            int[] presentDays = new int[StudentName.Length];
-            for (int i = 0; i < StudentName.Length; i++)
+            foreach (var student in StudentData.StudentsList)
             {
-                // Calculate attendance percentage, present/absent
+                // Reset total days present for each student
+                student.TotalDaysPresent = 0;
+
+                // Calculate total days present for each student
                 int late = 0;
                 foreach (var status in matchingStatuses)
                 {
-                    switch (status.AttendanceStatus[i])
+                    switch (status.AttendanceStatus[StudentData.StudentsList.IndexOf(student)])
                     {
                         case 4: // Present
-                            presentDays[i]++; break;
-                        case 3: break; // Absent
+                            student.TotalDaysPresent++;
+                            break;
                         case 2: // Late
-                            presentDays[i]++; late++;
+                            student.TotalDaysPresent++;
+                            late++;
                             if (late % 3 == 0)
                             {
-                                presentDays[i]--;
+                                student.TotalDaysPresent--;
                                 late = 0;
                             }
                             break;
                         case 1: // Excused
-                            presentDays[i]++; break;
-                        default: break; // No input
+                            student.TotalDaysPresent++;
+                            break;
+                        default: // Absent or No input
+                            break;
                     }
                 }
 
                 // Populate groupboxes
                 GroupBox groupBox = new GroupBox();
-                groupBox.Text = StudentName[i];
+                groupBox.Text = student.Name;
 
                 Label id = new Label();
-                id.Text = StudentNo[i];
+                id.Text = student.ID;
                 id.Location = new System.Drawing.Point(250, 0);
 
                 Label totalAttendance = new Label();
-                totalAttendance.Text = $"{presentDays[i]} / {matchingStatuses.Count()} = {((float)presentDays[i] / matchingStatuses.Count()) * 100}%";
+                totalAttendance.Text = $"{student.TotalDaysPresent} / {matchingStatuses.Count()} = {((float)student.TotalDaysPresent / matchingStatuses.Count()) * 100}%";
                 totalAttendance.Location = new System.Drawing.Point(375, 0);
 
                 groupBox.Controls.Add(id);
@@ -80,7 +99,6 @@ namespace Monitoring
                 groupBox.Size = new System.Drawing.Size(470, 25);
 
                 flowLayoutPanel1.Controls.Add(groupBox);
-                groupBox.TabIndex = i;
             }
 
             if (!matchingStatuses.Any())
@@ -88,6 +106,7 @@ namespace Monitoring
                 MessageBox.Show("No attendance records found for the selected date/subject.");
             }
         }
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
