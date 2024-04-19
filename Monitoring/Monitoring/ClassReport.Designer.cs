@@ -116,7 +116,7 @@ namespace Monitoring
             panel1.Location = new Point(10, 98);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(134, 43);
+            panel1.Size = new Size(159, 43);
             panel1.TabIndex = 14;
             panel1.Paint += panel1_Paint;
             // 
@@ -138,7 +138,7 @@ namespace Monitoring
             label1.AutoSize = true;
             label1.BackColor = Color.LightBlue;
             label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(59, 13);
+            label1.Location = new Point(60, 13);
             label1.Name = "label1";
             label1.Size = new Size(62, 20);
             label1.TabIndex = 8;
@@ -261,6 +261,7 @@ namespace Monitoring
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox7.TabIndex = 19;
             pictureBox7.TabStop = false;
+            pictureBox7.Click += pictureBox7_Click;
             // 
             // label4
             // 

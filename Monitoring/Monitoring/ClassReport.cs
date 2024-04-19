@@ -14,7 +14,7 @@ namespace Monitoring
 {
     public partial class ClassReport : Form
     {
-        private List<Attendance.Status> attendanceList;
+        public List<Attendance.Status> attendanceList;
 
         public ClassReport(List<Attendance.Status> attendanceList)
         {
@@ -30,11 +30,10 @@ namespace Monitoring
         public string[] StudentNo;
         public Status Status;
         public int Subject;
-        public void GetData(string[] studentName, string[] studentNo, Status status, int subject)
+        public void GetData(string[] studentName, string[] studentNo, int subject)
         {
             StudentName = studentName;
             StudentNo = studentNo;
-            Status = status;
             Subject = subject;
         }
 
@@ -43,7 +42,7 @@ namespace Monitoring
             // Clear existing controls from flowLayoutPanel1
             flowLayoutPanel1.Controls.Clear();
 
-            // Filter attendance records for the selected date
+            // Filter attendance records for the selected date and subject
             var filteredAttendance = attendanceList.Where(record => record.DateTimeStamp.Date == SelectedDate.Date && record.Subject == SelectedSubject);
 
             // Iterate through filtered attendance records
@@ -64,7 +63,7 @@ namespace Monitoring
 
                     groupBox.Controls.Add(id);
                     groupBox.Controls.Add(present);
-                    groupBox.Size = new System.Drawing.Size(500, 40); // Width = 200, Height = 150
+                    groupBox.Size = new System.Drawing.Size(500, 25); // Width = 200, Height = 150
 
                     flowLayoutPanel1.Controls.Add(groupBox);
                     groupBox.TabIndex = i;
@@ -99,7 +98,9 @@ namespace Monitoring
 
         private void label5_Click(object sender, EventArgs e)
         {
-
+            TotalReport totalReport = new TotalReport(StudentName, StudentNo, attendanceList);
+            totalReport.Show();
+            this.Hide();
         }
 
         private void label11_Click(object sender, EventArgs e)
@@ -190,16 +191,23 @@ namespace Monitoring
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-            Form1 Form = new Form1();
+            Login Form = new Login();
             Form.Show();
             this.Close();
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
-            Form1 Form = new Form1();
+            Login Form = new Login();
             Form.Show();
             this.Close();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            TotalReport totalReport = new TotalReport(StudentName, StudentNo, attendanceList);
+            totalReport.Show();
+            this.Hide();
         }
     }
 }
