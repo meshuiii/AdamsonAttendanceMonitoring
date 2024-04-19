@@ -50,8 +50,6 @@
             panel5 = new Panel();
             label6 = new Label();
             pictureBox8 = new PictureBox();
-            pictureBox9 = new PictureBox();
-            label8 = new Label();
             comboBox1 = new ComboBox();
             label9 = new Label();
             pictureBox10 = new PictureBox();
@@ -74,7 +72,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
@@ -319,32 +316,11 @@
             pictureBox8.TabStop = false;
             pictureBox8.Click += pictureBox8_Click;
             // 
-            // pictureBox9
-            // 
-            pictureBox9.BackColor = Color.SteelBlue;
-            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(253, 66);
-            pictureBox9.Margin = new Padding(3, 2, 3, 2);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(23, 18);
-            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox9.TabIndex = 29;
-            pictureBox9.TabStop = false;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(217, 66);
-            label8.Name = "label8";
-            label8.Size = new Size(34, 15);
-            label8.TabIndex = 28;
-            label8.Text = "Date:";
-            // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "APPLICATIONS DEVT LAB", "APPLICATIONS DEVT LEC", "COMPUTER PROG LAB", "COMPUTER PROG LEC", "OBJECT ORIENTED PROG LAB", "OBJECT ORIENTED PROG LEC" });
-            comboBox1.Location = new Point(536, 68);
+            comboBox1.Location = new Point(373, 66);
             comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(119, 23);
@@ -354,7 +330,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(492, 70);
+            label9.Location = new Point(329, 68);
             label9.Name = "label9";
             label9.Size = new Size(37, 15);
             label9.TabIndex = 31;
@@ -425,10 +401,12 @@
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Location = new Point(192, 137);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(496, 215);
             flowLayoutPanel1.TabIndex = 56;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // TotalReport
             // 
@@ -445,8 +423,6 @@
             Controls.Add(pictureBox10);
             Controls.Add(comboBox1);
             Controls.Add(label9);
-            Controls.Add(pictureBox9);
-            Controls.Add(label8);
             Controls.Add(panel5);
             Controls.Add(panel3);
             Controls.Add(panel4);
@@ -459,6 +435,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "TotalReport";
             Text = "TotalReport";
+            Load += TotalReport_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -477,7 +454,6 @@
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
@@ -508,8 +484,6 @@
         private Panel panel5;
         private Label label6;
         private PictureBox pictureBox8;
-        private PictureBox pictureBox9;
-        private Label label8;
         private ComboBox comboBox1;
         private Label label9;
         private PictureBox pictureBox10;

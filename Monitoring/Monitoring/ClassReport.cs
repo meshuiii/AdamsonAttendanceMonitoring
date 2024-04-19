@@ -63,7 +63,7 @@ namespace Monitoring
 
                     groupBox.Controls.Add(id);
                     groupBox.Controls.Add(present);
-                    groupBox.Size = new System.Drawing.Size(500, 40); // Width = 200, Height = 150
+                    groupBox.Size = new System.Drawing.Size(500, 25); // Width = 200, Height = 150
 
                     flowLayoutPanel1.Controls.Add(groupBox);
                     groupBox.TabIndex = i;

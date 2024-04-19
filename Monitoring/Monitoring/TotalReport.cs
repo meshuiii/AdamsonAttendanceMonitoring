@@ -32,6 +32,8 @@ namespace Monitoring
 
         public void DisplayTotalReport()
         {
+            flowLayoutPanel1.Controls.Clear();
+
             // Filter attendance records for the selected date and subject
             var matchingStatuses = StatusList.Where(status => status.Subject == SelectedSubject);
 
@@ -75,7 +77,7 @@ namespace Monitoring
 
                 groupBox.Controls.Add(id);
                 groupBox.Controls.Add(totalAttendance);
-                groupBox.Size = new System.Drawing.Size(500, 32);
+                groupBox.Size = new System.Drawing.Size(470, 25);
 
                 flowLayoutPanel1.Controls.Add(groupBox);
                 groupBox.TabIndex = i;
@@ -115,6 +117,16 @@ namespace Monitoring
             Login Form = new Login();
             Form.Show();
             this.Hide();
+        }
+
+        private void TotalReport_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
