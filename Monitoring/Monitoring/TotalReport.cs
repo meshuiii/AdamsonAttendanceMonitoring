@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,23 +28,9 @@ namespace Monitoring
             StudentNo = studentNo;
             SelectedDate = DateTime.Now;
             StatusList = statusList;
-            InitializeStudentData(studentName, studentNo);
 
         }
 
-
-        private void InitializeStudentData(string[] studentNames, string[] studentIDs)
-        {
-            for (int i = 0; i < studentNames.Length; i++)
-            {
-                StudentData.StudentsList.Add(new Student
-                {
-                    Name = studentNames[i],
-                    ID = studentIDs[i],
-                    TotalDaysPresent = 0 // Initialize total days present to 0
-                });
-            }
-        }
         public void DisplayTotalReport()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -51,47 +38,42 @@ namespace Monitoring
             // Filter attendance records for the selected date and subject
             var matchingStatuses = StatusList.Where(status => status.Subject == SelectedSubject);
 
-            foreach (var student in StudentData.StudentsList)
+            int[] presentDays = new int[StudentName.Length];
+            for (int i = 0; i < StudentName.Length; i++)
             {
-                // Reset total days present for each student
-                student.TotalDaysPresent = 0;
-
-                // Calculate total days present for each student
+                // Calculate attendance percentage, present/absent
                 int late = 0;
                 foreach (var status in matchingStatuses)
                 {
-                    switch (status.AttendanceStatus[StudentData.StudentsList.IndexOf(student)])
+                    switch (status.AttendanceStatus[i])
                     {
                         case 4: // Present
-                            student.TotalDaysPresent++;
-                            break;
+                            presentDays[i]++; break;
+                        case 3: break; // Absent
                         case 2: // Late
-                            student.TotalDaysPresent++;
-                            late++;
+                            presentDays[i]++; late++;
                             if (late % 3 == 0)
                             {
-                                student.TotalDaysPresent--;
+                                presentDays[i]--;
                                 late = 0;
                             }
                             break;
                         case 1: // Excused
-                            student.TotalDaysPresent++;
-                            break;
-                        default: // Absent or No input
-                            break;
+                            presentDays[i]++; break;
+                        default: break; // No input
                     }
                 }
 
                 // Populate groupboxes
                 GroupBox groupBox = new GroupBox();
-                groupBox.Text = student.Name;
+                groupBox.Text = StudentName[i];
 
                 Label id = new Label();
-                id.Text = student.ID;
+                id.Text = StudentNo[i];
                 id.Location = new System.Drawing.Point(250, 0);
 
                 Label totalAttendance = new Label();
-                totalAttendance.Text = $"{student.TotalDaysPresent} / {matchingStatuses.Count()} = {((float)student.TotalDaysPresent / matchingStatuses.Count()) * 100}%";
+                totalAttendance.Text = $"{presentDays[i]} / {matchingStatuses.Count()} = {((float)presentDays[i] / matchingStatuses.Count()) * 100}%";
                 totalAttendance.Location = new System.Drawing.Point(375, 0);
 
                 groupBox.Controls.Add(id);
@@ -99,6 +81,7 @@ namespace Monitoring
                 groupBox.Size = new System.Drawing.Size(470, 25);
 
                 flowLayoutPanel1.Controls.Add(groupBox);
+                groupBox.TabIndex = i;
             }
 
             if (!matchingStatuses.Any())
@@ -106,7 +89,6 @@ namespace Monitoring
                 MessageBox.Show("No attendance records found for the selected date/subject.");
             }
         }
-
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

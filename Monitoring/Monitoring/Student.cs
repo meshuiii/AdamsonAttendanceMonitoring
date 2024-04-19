@@ -9,12 +9,14 @@ namespace Monitoring
     public class Student
     {
         public string Name { get; set; }
-        public string ID { get; set; }
-        public int TotalDaysPresent { get; set; }
+        public string StudentID { get; set; }
+        public AttendanceRecord[] AttendanceRecords { get; set; }
     }
 
-    public static class StudentData
+    public class AttendanceRecord
     {
-        public static List<Student> StudentsList { get; set; } = new List<Student>();
+        public DateTime Date { get; set; }
+        public int Status { get; set; } // Use integer to represent status
+        public string Subject { get; set; }
     }
 }

@@ -108,21 +108,7 @@ namespace Monitoring
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<Student> studentsList = StudentData.StudentsList;
-
-            AllocConsole();
-
-            if (studentsList != null)
-            {
-                foreach (var student in studentsList)
-                {
-                    Console.WriteLine($"Name: {student.Name}, ID: {student.ID}, Total Days Present: {student.TotalDaysPresent}");
-                }
-            }
-            else
-            {
-                Console.WriteLine("StudentsList is empty or null.");
-            }
+           
 
         }
     }
